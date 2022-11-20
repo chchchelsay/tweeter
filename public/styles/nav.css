@@ -1,0 +1,36 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+}
+
+/* page title "TWEETER" */
+.nav .title {
+  font-family: Bungee, cursive;
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 25px;
+}
+
+.nav .newTweet {
+  font-family: Source Sans Pro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+  margin-right: 1.5em;
+}
+
+
+.nav .arrow {
+  color: #FF0000;
+}
