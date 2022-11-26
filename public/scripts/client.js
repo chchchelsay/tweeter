@@ -42,9 +42,7 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
     let  $tweet = $(`
-<article 
-
-class = "tweet">
+<article class = "tweet">
   
 <header >
   <section>
@@ -72,3 +70,20 @@ class = "tweet">
   };
   renderTweets(data);
 });
+
+//AJAX UPDATES FOR FORM SUBMIT
+
+$('#new-tweet').submit(function(event) {
+  event.preventDefault();
+  const tweet = $(this).serialize();
+
+  $.ajax({
+    type: "POST",
+    url: '/tweets/',
+    data: tweet
+  }).then(function(res) {
+    console.log(res)
+  });
+});
+
+
