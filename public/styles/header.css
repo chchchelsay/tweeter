@@ -1,5 +1,4 @@
-header  {
-  max-height: 520px;
+body>header  {
   height: 520px; /* 400px + 120px fixed nav */
   width: 100%;
   display: flex;
