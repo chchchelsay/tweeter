@@ -26,19 +26,21 @@ article.tweet >header>h4{
   color: grey;
 }
 article.tweet >header section>img{
-  width: 5rem;
+  width: auto;
   height: auto;
-  margin-right:1rem
+  margin-right: 5px;
+  margin-top: 5px;
 }
 article.tweet >h3{
-  margin-left: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 article.tweet >footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0px 8px;
-  border-top: 3px solid rgb(60, 166, 214);
+  border-top: 3px solid grey;
   padding: 0px 10px;
 }
 
