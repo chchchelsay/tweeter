@@ -4,6 +4,7 @@ form {
   padding-top: 50px;
 }
 
+
 .new-tweet form div {
   display: flex;
   justify-content: space-between;
@@ -11,7 +12,28 @@ form {
   font-size: 20px;
 }
 
-/* text input box */
+
+/* TWEET BUTTON ON LEFT */
+.tweet-button{
+  background-color:white;
+  color: red;
+  font-family: 'Bungee', cursive;
+  font-weight: 600;
+  font-style: italic;
+ }
+
+/* CHARACTER COUNTER ON RIGHT */
+.counter{
+  font-family: 'Bungee', cursive;
+  color: rgb(20, 137, 192);
+ }
+
+ /* OVER CHARACTER LIMIT*/
+ .maxChars {
+  color:red;
+ }
+
+/* TWEET INPUT BOX */
 #tweet-text{
   color: black;
   width:100%;
@@ -22,21 +44,15 @@ form {
   background-color: snow;
   font-weight: 600;
  }
+ 
 
 
- /* "TWEET" button */
- form div button {
-  background-color:white;
-  color: red;
-  font-weight: 600;
-  font-style: italic;
-}
 
-/* CHARACTER COUNTER */
-.counter{
-  font-family: 'Bungee', cursive;
-  color: red;
- }
+
+
+
+
+
 
 
 
