@@ -21,6 +21,7 @@ const escape = function (str) {
     <header>
       <section>
     <img src=${escape(tweet.user.avatars)} alt="profilepic"/>
+
     <h4>${escape(tweet.user.name)}</h4>
       </section>
     <h4>${escape(tweet.user.handle)}</h4>
@@ -48,6 +49,8 @@ const escape = function (str) {
 
 ///////////// LOAD TWEETS ///////////////////////////
 const loadTweets = function () {
+  $('.error-char').text('Tweets must be 140 characters or less. Keep it short and sweet!').hide();
+  $('.error-none').text('Tweets cannot be blank!').hide();
   $.ajax('/tweets', {
     type: 'GET',
   }).then(function (tweet) {

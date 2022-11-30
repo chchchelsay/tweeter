@@ -56,5 +56,18 @@
   color: rgb(60, 166, 214);
 }
 
+.error-char{
+  color: red;
+  border: 3px solid red;
+  padding: 0.75em;
+  margin: 3rem;
+}
+
+.error-none{
+  color: red;
+  border: 3px solid red;
+  padding: 0.75em;
+  margin: 3rem;
+}
 
 
