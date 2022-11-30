@@ -1,41 +1,41 @@
 /* actual tweet container */
-article.tweet{
+.tweet{
   width: 100%;
   color: rgb(60, 166, 214);
   background-color: white;
   border: 3px solid rgb(60, 166, 214);
   margin: 3rem 0;
 }
-article.tweet:hover{
+.tweet:hover{
   box-shadow: 5px 5px 5px lightslategray;
 }
-article.tweet >header{
+.tweet >header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
   margin: 0px 40px;
 }
-article.tweet >header section{
+.tweet >header section{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-article.tweet >header>h4{
+.tweet >header>h4{
   color: grey;
 }
-article.tweet >header section>img{
+.tweet >header section>img{
   width: auto;
   height: auto;
   margin-right: 5px;
   margin-top: 5px;
 }
-article.tweet >h3{
+.tweet >h3{
   margin-left: 20px;
   margin-right: 20px;
 }
-article.tweet >footer{
+.tweet >footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -44,14 +44,14 @@ article.tweet >footer{
   padding: 0px 10px;
 }
 
-article.tweet footer li{
+.tweet footer li{
   display: inline;
   margin-left: 1rem;
 
 }
-article.tweet footer li i{
+.tweet footer li i{
   color: red;
 }
-article.tweet footer li i:hover{
+.tweet footer li i:hover{
   color: rgb(60, 166, 214);
 }

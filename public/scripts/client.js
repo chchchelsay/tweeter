@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
 
 ///////////// CREATE TWEET ELEMENT ///////////////////////////  
 
@@ -36,50 +35,44 @@ $(document).ready(function() {
 ///////////// RENDER TWEETS ///////////////////////////  
   const renderTweets = function (tweets) {
     for (let tweet of tweets) {
-      $('#new-tweets-container').prepend(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
 ///////////// LOAD TWEETS ///////////////////////////
 const loadTweets = function () {
-  $.ajax({
+  $.ajax('/tweets', {
     type: 'GET',
-    url: '/tweets',
-  }).then(function(tweet) {
-    console.log(tweet);
+  }).then(function (tweet) {
+    $('#tweets-container').empty();
     renderTweets(tweet);
-  })
+  });
 };
 
 ///////////// SUBMIT TWEETS ///////////////////////////
 const submitTweets = function () {
-  $('#tweet-form').on('submit', function (event) {
+  $("#tweet-form").on('submit', function (event) {
     event.preventDefault();
-
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
+    if ($('#tweet-text').val().length > 140) {
+      return $('.error-char').text('Tweets must be 140 characters or less. Keep it short and sweet!').slideDown('slow');
+    } else if (!$('#tweet-text').val()) {
+      return $('.error-none').text('Tweets cannot be blank!').slideDown('slow');
+    }
+    $.ajax('/tweets', {
+      type: "POST",
       data: $(this).serialize(),
 
-    }).then(function(res) {
-      $('#new-tweets-container').empty();
+    }).then(function (res) {
       loadTweets();
-    })
+      $('#tweet-text').val('');
+    });
   });
-}
+};
 
 $(document).ready(() => {
   loadTweets();
   submitTweets();
 });
-});
-
-
-
-
-
-
-
 
 
 
