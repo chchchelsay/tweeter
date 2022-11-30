@@ -1,11 +1,11 @@
 nav {
-  height: 100px;
+  display: flex;
   background-color: rgb(20, 137, 192);
   color: #FFFFFF;
   position: fixed;
   padding: 1.5em;
-  width: 100%;
-  display: flex;
+  width: 100vw;
+  height: 100px;
   justify-content: space-between;
   font-family: Bungee;
 }
@@ -34,10 +34,18 @@ nav {
   color: #FF0000;
 }
 
+.nav i{
+  color:#FF0000;
+  animation:hovering 2s infinite linear;
+}
+@keyframes hovering {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(10px);}
+  100% {transform: translateY(0px);}
+}
+
 @media only screen and (min-width: 1024px) {
-  nav {
-    position: fixed;
-    top: 0;
-    background-color: #4056A1;
+  nav{
+    background-color: rgb(20, 137, 192);
   }
 }
