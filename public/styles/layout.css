@@ -10,10 +10,8 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
+/* Global layout stuff */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -32,6 +30,7 @@ main {
   background-color: #f4f1ec;
  }
  
+ /* for larger/desktop screens */
  @media only screen and (min-width: 1024px) {
   main{
     margin-top: 10rem;
