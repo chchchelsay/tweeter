@@ -1,6 +1,6 @@
 body>header  {
   display: flex;
-  height: 520px; /* 400px + 120px fixed nav */
+  height: 500px; 
   width: 100%;
   flex-direction: column;
   align-items: center;
