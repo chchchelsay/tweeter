@@ -1,6 +1,6 @@
 body>header  {
   display: flex;
-  height: 500px; 
+  height: 450px; 
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -11,9 +11,10 @@ body>header  {
 }
 @media only screen and (min-width: 1024px) {
   body>header{
-   margin-top: 10rem;
+   margin-top: 13.5rem;
    margin-left: 3rem;
-   width: 35%;
+   width: 40%;
+   height: 40%;
    background-color: rgb(60, 166, 214);
    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   }

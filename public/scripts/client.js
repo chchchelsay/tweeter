@@ -5,16 +5,16 @@
  */
 
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-///////////// CREATE TWEET ELEMENT ///////////////////////////  
+///////////// CREATE TWEET ELEMENT ///////////////////////////
 
-  const createTweetElement = function(tweet) {
-    return `
+const createTweetElement = function(tweet) {
+  return `
     <article
     class = "tweet">
     
@@ -37,31 +37,31 @@ const escape = function (str) {
     <li><i class="fa-solid fa-heart"></i></li>
     </ul>
     </footer>
-    </article>`
-  };
+    </article>`;
+};
 
-///////////// RENDER TWEETS ///////////////////////////  
-  const renderTweets = function (tweets) {
-    for (let tweet of tweets) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
-    }
-  };
+///////////// RENDER TWEETS ///////////////////////////
+const renderTweets = function(tweets) {
+  for (let tweet of tweets) {
+    $('#tweets-container').prepend(createTweetElement(tweet));
+  }
+};
 
 ///////////// LOAD TWEETS ///////////////////////////
-const loadTweets = function () {
+const loadTweets = function() {
   $('.error-char').text('Tweets must be 140 characters or less. Keep it short and sweet!').hide();
   $('.error-none').text('Tweets cannot be blank!').hide();
   $.ajax('/tweets', {
     type: 'GET',
-  }).then(function (tweet) {
+  }).then(function(tweet) {
     $('#tweets-container').empty();
     renderTweets(tweet);
   });
 };
 
 ///////////// SUBMIT TWEETS ///////////////////////////
-const submitTweets = function () {
-  $("#tweet-form").on('submit', function (event) {
+const submitTweets = function() {
+  $("#tweet-form").on('submit', function(event) {
     event.preventDefault();
     if ($('#tweet-text').val().length > 140) {
       return $('.error-char').text('Tweets must be 140 characters or less. Keep it short and sweet!').slideDown('slow');
@@ -72,7 +72,7 @@ const submitTweets = function () {
       type: "POST",
       data: $(this).serialize(),
 
-    }).then(function (res) {
+    }).then(function() {
       loadTweets();
       $('#tweet-text').val('');
     });
