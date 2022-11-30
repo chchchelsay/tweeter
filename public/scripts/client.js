@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 ///////////// CREATE TWEET ELEMENT ///////////////////////////  
 
   const createTweetElement = function(tweet) {
@@ -13,16 +20,16 @@
     
     <header>
       <section>
-    <img src=${tweet.user.avatars} alt="profilepic"/>
-    <h4>${tweet.user.name}</h4>
+    <img src=${escape(tweet.user.avatars)} alt="profilepic"/>
+    <h4>${escape(tweet.user.name)}</h4>
       </section>
-    <h4>${tweet.user.handle}</h4>
+    <h4>${escape(tweet.user.handle)}</h4>
     </header>
   
-    <h3>${tweet.content.text}</h3>
+    <h3>${escape(tweet.content.text)}</h3>
 
     <footer>
-    <h6>${timeago.format(tweet.created_at)}</h6>
+    <h6>${escape(timeago.format(tweet.created_at))}</h6>
     <ul>
     <li><i class="fa-solid fa-flag"></i></li>
     <li><i class="fa-solid fa-retweet"></i></li>
