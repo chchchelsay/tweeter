@@ -33,3 +33,11 @@ nav {
 .nav .arrow {
   color: #FF0000;
 }
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    background-color: #4056A1;
+  }
+}
