@@ -1,3 +1,4 @@
+/* entire nav bar at top, containing logo and "write a new tweet" */
 nav {
   display: flex;
   background-color: rgb(20, 137, 192);
@@ -18,7 +19,7 @@ nav {
   margin-top: 25px;
 }
 
-/* "Write a New Tweet" */
+/* "Write a new tweet" */
 .nav .newTweet {
   font-family: Source Sans Pro;
   display: flex;
@@ -34,9 +35,10 @@ nav {
   color: #FF0000;
 }
 
+/* red arrow hover effect */
 .nav i{
-  color:#FF0000;
-  animation:hovering 2s infinite linear;
+  color: #FF0000;
+  animation:hovering 3s infinite;
 }
 @keyframes hovering {
   0% {transform: translateY(0px);}
@@ -44,6 +46,7 @@ nav {
   100% {transform: translateY(0px);}
 }
 
+/* nav bar styling for a larger/desktop screen */
 @media only screen and (min-width: 1024px) {
   nav{
     background-color: rgb(20, 137, 192);
