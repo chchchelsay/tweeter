@@ -60,20 +60,24 @@
   </div>
 </header>    
 
- <!-- Page-specific (main) content here -->
- <main class="tweet-container">
-  <section class="new-tweet">
-    <form id="tweet-form">
-      <div class="tweet-text">
-        <textarea placeholder="What are you humming about?" name="text" id="tweet-text" class="textarea"></textarea>
-      </div>
-        <button type="submit" class="tweet-button">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-    </form>
-  </section>
+  <!-- Page-specific (main) content here -->
+  <main class="tweet-container">
+    <section class="new-tweet">
+      <form id="tweet-form">
+        <div class="tweet-text">
+          <p class="error-char"></p>
+          <P class="error-none"></P>
+          <span class="empty"></span>          
+          <textarea placeholder="What are you humming about?" name="text" id="tweet-text" class="textarea"></textarea>
+        </div>
+          <button type="submit" class="tweet-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+      </form>
+    </section>
 
-  <section id="tweets-container">
-  </section>
-    </main>
-  </body>
+    <section id="tweets-container">
+    </section>
+  </main>
+</body>
+
 </html>

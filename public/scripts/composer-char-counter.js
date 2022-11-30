@@ -1,16 +1,7 @@
-$(document).ready(function() {
-
-  $('#tweet-text').on('input', () => {
-    const counter = $('#tweet-text').closest('form').children('div').children('output');
+$(document).ready(function () {
+  $("#tweet-text").on('input', function () {
     const tweet = $('#tweet-text').val();
     const result = (140 - tweet.length);
-
-    if(result >= 0){  
-      counter.removeClass('maxChars');
-    }
-    else {
-      counter.addClass('maxChars');
-    }
-    counter.val(result);
-});
+    $('.counter').text(result).toggleClass('maxChars', result < 0);
+  });
 });
