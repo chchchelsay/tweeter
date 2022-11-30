@@ -1,6 +1,7 @@
+/* main/default/mobile/smaller screens */
 body>header  {
   display: flex;
-  height: 450px; 
+  height: 500px; 
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -9,6 +10,10 @@ body>header  {
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   color: white;
 }
+
+
+/* this applies to desktop/wider screens */
+
 @media only screen and (min-width: 1024px) {
   body>header{
    margin-top: 13.5rem;
