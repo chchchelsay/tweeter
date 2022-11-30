@@ -5,72 +5,96 @@
  */
 $(document).ready(function() {
 
-  loadTweets();
+///////////// CREATE TWEET ELEMENT ///////////////////////////  
 
-
-  $('#new-tweet-form').submit(function(event) {
-    event.preventDefault();
-    const tweet = $(this).serialize();
+  const createTweetElement = function(tweet) {
+    return `
+    <article
+    class = "tweet">
+    
+    <header>
+      <section>
+    <img src=${tweet.user.avatars} alt="profilepic"/>
+    <h4>${tweet.user.name}</h4>
+      </section>
+    <h4>${tweet.user.handle}</h4>
+    </header>
   
-    $.ajax({
-      type: "POST",
-      url: '/tweets/',
-      data: tweet,
-      success: () => {
-        loadTweets();
-      }
-    });
-  });
+    <h3>${tweet.content.text}</h3>
 
-
-  //CREATE TWEET ELEMENT
-  const createTweetElement = function(tweetData) {
-    let  $tweet = $(`
-<article 
-class = "tweet">
-
-<header >
-<section>
-  <img src=${tweetData.user.avatars} alt="profilepic"/>
-  <h4>${tweetData.user.name}</h4>
-  </section>
-  
-  <h4>${tweetData.user.handle}</h4>
-</header>
-  
-<h3>${tweetData.content.text}</h3>
-
-<footer>
-<h6>${timeago.format(tweetData.created_at)}</h6>
-  <ul>
+    <footer>
+    <h6>${timeago.format(tweet.created_at)}</h6>
+    <ul>
     <li><i class="fa-solid fa-flag"></i></li>
     <li><i class="fa-solid fa-retweet"></i></li>
     <li><i class="fa-solid fa-heart"></i></li>
-  </ul>
-</footer>
-    
-</article>`);
-
-    return $tweet;
+    </ul>
+    </footer>
+    </article>`
   };
 
-
-  //RENDER TWEETS
-  const renderTweets = (tweets) => {
-    tweets.forEach(tweet => {
-      let $tweet = createTweetElement(tweet);
-      $(".new-tweet-container").append($tweet);
-    });
+///////////// RENDER TWEETS ///////////////////////////  
+  const renderTweets = function (tweets) {
+    for (let tweet of tweets) {
+      $('#new-tweets-container').prepend(createTweetElement(tweet));
+    }
   };
 
-  //LOAD TWEETS
-  const loadTweets = () => {
+///////////// LOAD TWEETS ///////////////////////////
+const loadTweets = function () {
+  $.ajax({
+    type: 'GET',
+    url: '/tweets',
+  }).then(function(tweet) {
+    console.log(tweet);
+    renderTweets(tweet);
+  })
+};
+
+///////////// SUBMIT TWEETS ///////////////////////////
+const submitTweets = function () {
+  $('#tweet-form').on('submit', function (event) {
+    event.preventDefault();
+
     $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: '/tweets',
-      success: (tweets) => {
-        renderTweets(tweets);
-      }
-    });
-  };
+      data: $(this).serialize(),
+
+    }).then(function(res) {
+      $('#new-tweets-container').empty();
+      loadTweets();
+    })
+  });
+}
+
+$(document).ready(() => {
+  loadTweets();
+  submitTweets();
 });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

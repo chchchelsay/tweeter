@@ -61,12 +61,10 @@
 </header>    
 
 <!-- Page-specific (main) content here -->
-    <main
-      class="tweet-container">
-
+    <main class="tweet-container">
       <section class="new-tweet">
-        
-      <form id="tweet-form" class="tweet-form" method="POST" action="/tweets" >
+      <form action="/tweets" method="POST">
+      <form id="tweet-form">
       <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
     <div>
       <button class="tweet-button" type="submit">Tweet</button>
@@ -74,7 +72,6 @@
     </div>
       </form>
       </section>
-
       <section id = "new-tweet-container"></section>
 
     </main>
