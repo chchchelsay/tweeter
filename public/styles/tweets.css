@@ -1,4 +1,4 @@
-/* actual tweet container */
+/* posted tweets */
 .tweet{
   width: 100%;
   color: rgb(60, 166, 214);
@@ -6,9 +6,12 @@
   border: 3px solid rgb(60, 166, 214);
   margin: 3rem 0;
 }
+
+/* partial shadow hover fo posted tweets */
 .tweet:hover{
   box-shadow: 5px 5px 5px lightslategray;
 }
+
 .tweet >header{
   display: flex;
   flex-direction: row;
@@ -22,19 +25,25 @@
   justify-content: center;
   align-items: center;
 }
+
+/* username in posted tweets */
 .tweet >header>h4{
   color: grey;
 }
+
+/* user profile pic icon in posted tweets */
 .tweet >header section>img{
   width: auto;
   height: auto;
   margin-right: 5px;
   margin-top: 5px;
 }
+/* tweet-text content */
 .tweet >h3{
   margin-left: 20px;
-  margin-right: 20px;
 }
+
+/* border separating footer from tweet text */
 .tweet >footer{
   display: flex;
   flex-direction: row;
@@ -44,18 +53,22 @@
   padding: 0px 10px;
 }
 
+/* keeps red icons inline */
 .tweet footer li{
   display: inline;
   margin-left: 1rem;
 
 }
+/* keeps red icons red! */
 .tweet footer li i{
   color: red;
 }
+/* hover effect for red icons */
 .tweet footer li i:hover{
   color: rgb(60, 166, 214);
 }
 
+/* error message box that pops up if over character limit */
 .error-char{
   color: red;
   border: 3px solid red;
@@ -63,11 +76,10 @@
   margin: 3rem;
 }
 
+/* error message box that pops up if empty tweet form box get submitted*/
 .error-none{
   color: red;
   border: 3px solid red;
   padding: 0.75em;
   margin: 3rem;
 }
-
-
