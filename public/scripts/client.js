@@ -75,7 +75,9 @@ const submitTweets = function() {
     }).then(function() {
       loadTweets();
       $('#tweet-text').val('');
-    });
+    }).catch(function(error) {
+      console.log(error);
+    })
   });
 };
 
